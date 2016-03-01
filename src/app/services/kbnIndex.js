@@ -16,6 +16,9 @@ function (angular, _, config, moment) {
   module.service('kbnIndex', function($http, alertSrv) {
     // returns a promise containing an array of all indices matching the index
     // pattern that exist in a given range
+
+    this.collectionIds = {}; // store collection id corresponding to each column name.
+    var that = this;
     this.indices = function(from,to,pattern,interval) {
       var possible = [];
       _.each(expand_range(fake_utc(from),fake_utc(to),interval),function(d){
@@ -69,6 +72,7 @@ function (angular, _, config, moment) {
 
         _.each(p.data.status, function(v,k) {
           collections.push(k);
+          that.collectionIds[k] = v;
         });
 
         if (DEBUG) { console.debug('kbnIndex: all_collections response p = ',p,'collections = ',collections); }

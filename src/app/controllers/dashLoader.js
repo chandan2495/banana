@@ -53,6 +53,11 @@ function (angular, _) {
         success(function(data) {
           data.solr.server = $scope.new.server;
           data.solr.core_name = $scope.new.core_name;
+          //csingh - code added to retain core_list and collectionIds on creating a new dashboard
+          /******************start******************************/          
+          // data.solr.core_list = dashboard.current.solr.core_list;
+          // data.solr.collectionIds = dashboard.current.solr.collectionIds;
+          //******************end*******************************/
           // If time series dashboard, update all timefield references in the default dashboard
           if (type === 'default-ts') {
             data.services.filter.list[0].field = $scope.new.time_field;

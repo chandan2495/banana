@@ -54,10 +54,15 @@ function (angular, _, config) {
       } else {
         fieldApi = '/schema/fields';
       }
-
+      var currentSolr = dashboard.current.solr;
+      var url = currentSolr.server;
+      if (currentSolr.collectionIds && currentSolr.collectionIds.length > 0)
+        url += currentSolr.collectionIds[currentSolr.core_name];
+      else
+        url += currentSolr.core_name;              
       var request = $http({
         // Get all fields in Solr core
-        url: dashboard.current.solr.server + dashboard.current.solr.core_name + fieldApi,
+        url: url + fieldApi,
         method: "GET"
       }).error(function(data, status) {
         if(status === 0) {

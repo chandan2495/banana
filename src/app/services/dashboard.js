@@ -123,6 +123,7 @@ function (angular, $, kbn, _, config, moment, Modernizr) {
         if (DEBUG) { console.debug('dashboard: kbnIndex.collections p = ',p); }
         if (p.length > 0) {
           self.current.solr.core_list = p;
+          self.current.solr.collectionIds = kbnIndex.collectionIds;
         } else {
           // No collections returned from Solr
           // Display alert only if USE_ADMIN_CORES flag in config.js is true.
