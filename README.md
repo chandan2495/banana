@@ -1,5 +1,21 @@
 # Banana
 
+##Instructions to get banana working with webconsole solr
+
+1.       Install [Nodejs](https://nodejs.org/)
+2.       git clone https://github.com/chandan2495/banana or download zip and extract.
+3.       Install project dependencies using 
+	```npm install```
+(Note: ignore the error if it is failing for bower install)
+4.       Change app_config.js file and provide webconsole_url, listening port for server, current system ip address, and samlToken validity time.
+5.       On webconsole install following friendlies,
+	- Install friendlies from Form #7173 for extended samlToken validity.
+	- Install friendlies from Form #7643 for admin/luke api
+6.       node server.js (to start the server) 
+7.       In browser, [http://localhost:3000](http://localhost:3000)  ( 3000 is default port if not changed in app_config.js).
+
+
+
 The Banana project was forked from [Kibana](https://github.com/elastic/kibana), and works with all kinds of time series (and non-time series) data stored in [Apache Solr](https://lucene.apache.org/solr/). It uses Kibana's powerful dashboard configuration capabilities, ports key panels to work with Solr, and provides significant additional capabilities, including new panels that leverage [D3.js](http://d3js.org). 
 
 The goal is to create a rich and flexible UI, enabling users to rapidly develop end-to-end applications that leverage the power of Apache Solr. Data can be ingested into Solr through a variety of ways, including [LogStash](https://www.elastic.co/products/logstash), [Flume](https://flume.apache.org) and other connectors.
