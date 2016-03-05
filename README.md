@@ -11,7 +11,7 @@
 5.       On webconsole install following friendlies,
 	- Install friendlies from Form #7173 for extended samlToken validity.
 	- Install friendlies from Form #7643 for admin/luke api
-6.       node server.js (to start the server) 
+6.       ```node server.js``` (to start the server) 
 7.       In browser, [http://localhost:3000](http://localhost:3000)  ( 3000 is default port if not changed in app_config.js).
 
 
