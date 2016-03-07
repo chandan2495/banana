@@ -1,6 +1,6 @@
 # Banana
 
-##Instructions to get banana working with webconsole solr
+##Instructions to get banana working with standalone solr
 
 1.       Install [Nodejs](https://nodejs.org/)
 2.       git clone https://github.com/chandan2495/banana or download zip and extract.
