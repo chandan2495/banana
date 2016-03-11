@@ -211,6 +211,8 @@ function (angular, $, kbn, _, config, moment, Modernizr) {
       if(dashboard.index.interval !== 'none' && filterSrv.idsByType('time').length === 0) {
         self.refresh();
       }
+      if(self.current.solr.core_list.length==0)
+        self.refresh();
 
       return true;
     };
